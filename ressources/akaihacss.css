@@ -6,6 +6,10 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.page-header h1{
+  position: relative;
+}
+
 #main {
 	padding-top: 60px;
 	margin-left: 50px;
@@ -37,8 +41,15 @@ h1,h2,h3,h4,h5 {
   font-weight: bold;
 }
 
-a {
-  color: white;
+p a,p a:visited {
+  color: #9F9F9F;
+  font-weight: bold;
+}
+
+p a:hover,p a:active {
+  text-decoration: none;
+  font-style: italic;
+  color:  #ffffff;
 }
 
 /* ===== PARTIE Parcours ===== */
