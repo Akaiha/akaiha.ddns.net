@@ -1,0 +1,258 @@
+body {
+	position: relative; 
+  background: url("pictures/background.jpg") center fixed no-repeat;
+  background-size: cover;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+
+#main {
+	padding-top: 60px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.top-content {
+	height:140px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.page-header {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+a {
+  color: white;
+}
+
+/* ===== PARTIE Parcours ===== */
+
+.parcours-container {
+  margin-top: 10px;
+}
+
+#section-parcours {
+  padding-top: 30px;
+  margin-bottom: 10px;
+  background-color: #BA3A3A;
+  color: white;
+}
+
+.parcours-content img {
+  width: 250px;
+  padding-top: 15px;
+}
+
+.timeline {
+  padding: 30px 10px;
+  position: relative;
+  list-style: none;
+}
+
+.timeline:before{ /*Ligne centrale*/
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 5px;
+  background-color: #333;
+  left: 50%;
+  margin-left: -2.5px;
+}
+
+.timeline > li {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline > li:after {
+  clear: both;
+}
+
+.timeline > li:before, .timeline > li:after {
+  content: " ";
+  display: table;
+}
+
+.timeline li .timeline-badge {
+  color: #BA3A3A;
+  width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  margin-left: -25px;
+  background-color: #9F9F9F;
+  border-radius: 50%;
+}
+
+.timeline-panel-container {
+  width: 50%;
+  float: left;
+}
+
+.timeline-panel-container h4, .timeline-panel-container-inverted h4 {
+  color: #BA3A3A;
+}
+
+.timeline-panel-container-inverted {
+  width: 50%;
+  float: right;
+}
+
+.timeline-panel {
+  width: 90%;
+  float: right;
+  margin-right: 40px;
+  border: 2px solid #DDD;
+  border-radius: 7px;
+  padding: 20px 25px;
+  position: relative;
+  background-color: #9F9F9F;
+}
+
+.timeline-panel-container-inverted .timeline-panel {
+  float: left;
+  margin-left: 40px;
+}
+
+.timeline-panel:after {
+  position: absolute;
+  top: 27px;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #9F9F9F;
+  border-right: 0 solid #9F9F9F;
+  border-bottom: 14px solid transparent;
+  content: " ";
+}
+
+.timeline-panel-container-inverted .timeline-panel:after {
+  border-left-width: 0px;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+
+.pdf-download {
+  width: 280px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* ===== PARTIE PROJETS ===== */
+
+.projets-container {
+  margin-bottom: 10px;
+}
+
+#section-projets {
+  padding-top: 30px;
+  background-color: #9F9F9F;
+}
+
+#section-projets h1, {
+  text-align: right;
+}
+
+.align-right {
+  text-align: right;
+}
+
+#myCarousel {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.carousel-caption {
+  background: rgba(122,122,122,0.5);
+  margin-left: 120px;
+  margin-right: 120px;
+  text-align: center;
+}
+
+/* ===== PARTIE A PROPOS ===== */
+
+.about-container {
+  margin-bottom: 10px;
+}
+
+#section-about {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  background-color: #BA3A3A;
+  color: white;
+}
+
+/* ===== PARTIE CONTACT ===== */
+
+.contact-container {
+  margin-bottom: 10px;
+}
+
+#section-contact {
+  padding-top: 30px;
+  background-color: #9F9F9F;
+}
+
+#section-contact h1 {
+  text-align: right;
+}
+
+.affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+.affix ~ .container-fluid {
+   position: relative;
+   top: 50px;
+}
+
+.footer-content {
+  color: white;
+}
+
+.separator-half {
+  width: 50%;
+}
+
+/* ===== AJUSTEMENT TAILLE DU TEXTE ===== */
+
+.cv-content h4 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.pull-left, .pull-right {
+  font-size: 18px;
+}
+
+.page-header p {
+  font-size: 17px;
+}
+
+.dropdown-menu li a {
+  font-size: 18px;
+  font-weight: bold;
+}

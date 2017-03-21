@@ -1,0 +1,156 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+
+body {
+	background: url(images/background.jpg) fixed center no-repeat;
+	background-size: cover;
+	font-family: Arial, sans-serif;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+header {
+	padding: 30px 0px;
+}
+
+#main-title {
+	padding-top: 40px;
+	font-size: 40px;
+	font-family: 'Exo', monospace;
+	text-align: center;
+	color: #172AB8;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px #000;
+}
+
+#main-content-list {
+	width: 980px;
+	height: 500px;
+	margin : 0 auto;
+	padding-top: 100px;
+}
+
+#main-content-list li {
+	float: left;
+	width: 140px;
+	height: 500px;
+	overflow: hidden;
+	position: relative;
+}
+
+.bw-picture {
+	position: absolute;
+	left: 0px;
+	width: 140px;
+	height: 500px;
+	cursor: pointer;
+	background: url(images/bw-image.jpeg) no-repeat;
+	opacity: 0.8;
+}
+
+.color-picture {
+	position: absolute;
+	left: 140px;
+	width: 140px;
+	height: 500px;
+	cursor: pointer;
+	background: url(images/color-image.jpeg) no-repeat;
+}
+
+#part2 div {
+	background-position: -140px 0px;
+}
+
+#part3 div {
+	background-position: -280px 0px;
+}
+
+#part4 div {
+	background-position: -420px 0px;
+}
+
+#part5 div {
+	background-position: -560px 0px;
+}
+
+.content-list-item-desc {
+	position: absolute;
+	left: 140px;
+	width: 240px;
+	height: 460px;
+	padding: 20px;
+	background : linear-gradient(to right, rgba(18,186,153,1), rgba(0,0,0,0));
+}
+
+.list-item-name {
+	padding-top: 20px;
+	font-size: 30px;
+	font-family: 'Exo', sans-serif;
+	text-align: center;
+	text-shadow: 2px 2px 1px #000;
+	color: #0A54A6;
+	text-transform: uppercase;
+}
+
+.content-list-item-desc h3 {
+	margin-top: 30px;
+	padding: 10px;
+	font-size: 27px;
+	font-family: 'VT323', monospace;
+	background: linear-gradient(to right, rgba(32,106,189,1), rgba(0,0,0,0));
+	color: #12B99D;
+	text-align: center;
+	text-shadow: 1px 1px 1px #000;
+	border-radius: 5px;
+}
+
+.content-list-item-desc p{
+	padding-top: 35px;
+	font-size: 22px;
+	font-family: 'VT323', monospace;
+	color: ;
+	text-align: center;
+}
+
+#buttons-menu {
+	float: left;
+	width: 100%;
+	padding : 110px 0 50px 0;
+}
+
+#buttons-menu ul {
+	float: left;
+	position: relative;
+	left: 50%;
+	text-align: center;
+}
+
+.button {
+	float: left;
+	margin-left: 20px;
+	padding: 10px 5px;
+	width: 150px;
+	height: 60px;
+	position: relative;
+	right: 50%;
+	text-shadow: 1px 1px 1px #000;
+	text-align: center;
+	font-size: 22px;
+	font-family: 'Exo', sans-serif;
+	color: #000;
+	background: rgba(3, 220, 116,1);
+	border: 2px solid rgba(32,106,189,1);
+	border-radius: 5px;
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.75);
+	cursor: pointer;
+	opacity: 0.9;
+}
+
+.hovered {
+	background: rgba(87, 223, 209, 1);
+	font-size: 23px;
+}
