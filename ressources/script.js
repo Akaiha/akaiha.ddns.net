@@ -56,4 +56,9 @@ $(document).ready(function(){
       $(this).animate({left : "+=25px"}, 'slow');
   });
 
+  //Close alert on click or timeout
+  $(".alert-success").click(function(){
+    $(this).fadeOut(500);
+  });
+
 });

@@ -1,6 +1,8 @@
 <?php 
 	$nom = $prenom = $email = $telephone = $message = ""; //Récupération et assignation dans les variables des valeurs du formulaire de contact
 	$nomError = $prenomError = $emailError = $telephoneError = $messageError = "";
+	$isSuccess = false;
+	$mailTo = "christo.daum68@gmail.com";
 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$nom = verifyInput($_POST["nom"]);
@@ -8,21 +10,48 @@
 		$email = verifyInput($_POST["email"]);
 		$telephone = verifyInput($_POST["telephone"]);
 		$message = verifyInput($_POST["message"]);
+		$isSuccess = true;
+		$mailContent = "";
 		
 		if(empty($nom)) {	//Messages d'erreur sur les champs vides
 			$nomError = "Je voudrais connaître votre nom !";
+			$isSuccess = false;
 		}
+		else 
+			$mailContent .= "Nom : $nom\n";
+
 		if(empty($prenom)) {
 			$prenomError = "Je voudrais connaître votre prénom aussi !";
+			$isSuccess = false;
 		}
+		else 
+			$mailContent .= "Prénom : $prenom\n";
+
 		if(!isEmail($email)) {
 			$emailError = "Désolé mais ce n'est pas une adresse email !";
+			$isSuccess = false;
 		}
-		if(empty($message)) {
-			$messageError = "Je ne pourrai rien faire d'un message vide...";
-		}
+		else 
+			$mailContent .= "Adresse mail : $email\n";
+
 		if(!isPhone($telephone)){
 			$telephoneError = "Il n'est pas très correct ce numéro là, il ne peut comporter que des chiffres et des espaces";
+			$isSuccess = false;
+		}
+		else
+			$mailContent .= "Numéro de téléphone : $telephone\n";
+
+		if(empty($message)) {
+			$messageError = "Je ne pourrai rien faire d'un message vide...";
+			$isSuccess = false;
+		}
+		else 
+			$mailContent .= "Message :\n $message\n";
+
+		if($isSuccess) {
+			$headers = "From: $nom $prenom <$email>\r\nReply-To: $$email";
+			mail($mailTo, "$nom $prenom depuis akaiha.ddns.net", $mailContent, $headers);
+			$nom = $prenom = $email = $telephone = $message = "";
 		}
 	}
 
@@ -342,8 +371,7 @@
 								</div>
 							</div>
 							
-							<div class="alert alert-success alert-dismissable fade in">
-								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<div class="alert alert-success alert-dismissable fade in" style="display:<?php if($isSuccess) echo 'block'; else echo 'none';?>">
     							<p>Le message a bien été envoyé. Merci de m'avoir contacté !</p>
   							</div>
 							
