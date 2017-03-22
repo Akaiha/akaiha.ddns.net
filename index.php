@@ -1,3 +1,48 @@
+<?php 
+	$nom = $prenom = $email = $telephone = $message = ""; //Récupération et assignation dans les variables des valeurs du formulaire de contact
+	$nomError = $prenomError = $emailError = $telephoneError = $messageError = "";
+
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		$nom = verifyInput($_POST["nom"]);
+		$prenom = verifyInput($_POST["prenom"]);
+		$email = verifyInput($_POST["email"]);
+		$telephone = verifyInput($_POST["telephone"]);
+		$message = verifyInput($_POST["message"]);
+		
+		if(empty($nom)) {	//Messages d'erreur sur les champs vides
+			$nomError = "Je voudrais connaître votre nom !";
+		}
+		if(empty($prenom)) {
+			$prenomError = "Je voudrais connaître votre prénom aussi !";
+		}
+		if(!isEmail($email)) {
+			$emailError = "Désolé mais ce n'est pas une adresse email !";
+		}
+		if(empty($message)) {
+			$messageError = "Je ne pourrai rien faire d'un message vide...";
+		}
+		if(!isPhone($telephone)){
+			$telephoneError = "Il n'est pas très correct ce numéro là, il ne peut comporter que des chiffres et des espaces";
+		}
+	}
+
+	function isEmail($var){
+		return filter_var($var, FILTER_VALIDATE_EMAIL);
+	}
+
+	function isPhone($var) {
+		return preg_match("/^[0-9 ]*$/", $var);
+	}
+
+	function verifyInput($var) {
+		$var = trim($var);	//Supprime les caractères non voulus
+		$var = stripslashes($var); //Supprime les \
+		$var = htmlspecialchars($var);	//Converti en entité HTML
+		return $var;
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +52,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="ressources/akaihacss.css">
+		<!-- Polices -->
 		<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet">
 	</head>
 
@@ -250,8 +296,58 @@
 		 			<div class="page-header">
 						<h1 class="align-right">Me contacter</h1>
 					</div>
-					<div class="jumbotron">
-						<p class="text-alert text-center">Réalisation en cours !</p>
+					<!-- FORMULAIRE DE CONTACT -->
+					<div class="col-lg-10 col-lg-offset-1">
+						<form id="contact-form" method="post" action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" role="form"> <!-- La récupération des données se fait sur la même page -->
+							
+							<div class="row">
+								<div class="col-md-6">
+									<label for="nom">Nom<span class="red"> *</span></label>
+									<input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom" value="<?php echo $nom; ?>">
+									<p class="comments"><?php echo $nomError ?></p>
+								</div>
+								
+								<div class="col-md-6">
+									<label for="prenom">Prénom<span class="red"> *</span></label>
+									<input type="text" id="prenom" name="prenom" class="form-control" placeholder="Votre prénom" value="<?php echo $prenom; ?>">
+									<p class="comments"><?php echo $prenomError ?></p>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">
+									<label for="email">Email<span class="red"> *</span></label>
+									<input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse email" value="<?php echo $email; ?>">
+									<p class="comments"><?php echo $emailError ?></p>
+								</div>
+								
+								<div class="col-md-6">
+									<label for="telephone">Téléphone</label>
+									<input type="tel" id="telephone" name="telephone" class="form-control" placeholder="Votre numéro de téléphone" value="<?php echo $telephone; ?>">
+									<p class="comments"><?php echo $telephoneError ?></p>
+								</div>
+								
+								<div class="col-md-12">
+									<label for="message">Message<span class="red"> *</span></label>
+									<textarea type="text" id="message" name="message" class="form-control" placeholder="Votre message" rows="10" value="<?php echo $message; ?>"></textarea>
+									<p class="comments"><?php echo $messageError ?></p>
+								</div>
+								
+								<div class="col-md-12">
+									<p class="red form-required">* Ces information sont requises</p>
+								</div>
+								
+								<div class="col-md-12">
+									<input type="submit" class="form-send" value="Envoyer">
+								</div>
+							</div>
+							
+							<div class="alert alert-success alert-dismissable fade in">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    							<p>Le message a bien été envoyé. Merci de m'avoir contacté !</p>
+  							</div>
+							
+						</form>
 					</div>
 				</div>
 			</div>

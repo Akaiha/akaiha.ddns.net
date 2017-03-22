@@ -48,7 +48,6 @@ p a,p a:visited {
 
 p a:hover,p a:active {
   text-decoration: none;
-  font-style: italic;
   color:  #ffffff;
 }
 
@@ -246,6 +245,61 @@ p a:hover,p a:active {
 
 .separator-half {
   width: 50%;
+}
+
+#contact-form {
+	font-size: 20px;
+	padding: 40px;
+}
+
+.comments {
+	font-size: 14px;
+	font-style: italic;
+	color: #BA3A3A;
+	height: 25px;
+}
+
+#message {
+	max-width: 100%;
+	max-height: 300px;
+}
+
+.red {
+	color: #BA3A3A;
+}
+
+.form-required {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.form-control {
+	height: 50px;
+	font-size: 18px;
+}
+
+.form-send {
+	width: 100%;
+	background: #BA3A3A;
+	color: white;
+	border-radius: 5px;
+	margin: 40px auto 10px;
+	display: block;
+	padding: 15px;
+	border: 1px solid #BA3A3A;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in 0s;
+}
+
+.form-send:hover {
+	background: #990000;
+	border-color: #990000;
+}
+
+.alert {
+	text-align: center;
+	margin-top: 10px;
+	font-size: 16px;
 }
 
 /* ===== AJUSTEMENT TAILLE DU TEXTE ===== */
