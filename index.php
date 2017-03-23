@@ -256,13 +256,13 @@
 						<form id="contact-form" method="post" action="" role="form"> <!-- La récupération des données se fait sur la même page -->
 							
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-4 col-md-offset-2">
 									<label for="nom">Nom<span class="red"> *</span></label>
 									<input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom" value="">
 									<p class="comments"></p>
 								</div>
 								
-								<div class="col-md-6">
+								<div class="col-md-4">
 									<label for="prenom">Prénom<span class="red"> *</span></label>
 									<input type="text" id="prenom" name="prenom" class="form-control" placeholder="Votre prénom" value="">
 									<p class="comments"></p>
@@ -270,29 +270,29 @@
 							</div>
 							
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-4 col-md-offset-2">
 									<label for="email">Email<span class="red"> *</span></label>
 									<input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse email" value="">
 									<p class="comments"></p>
 								</div>
 								
-								<div class="col-md-6">
+								<div class="col-md-4">
 									<label for="telephone">Téléphone</label>
 									<input type="tel" id="telephone" name="telephone" class="form-control" placeholder="Votre numéro de téléphone" value="">
 									<p class="comments"></p>
 								</div>
 								
-								<div class="col-md-12">
+								<div class="col-md-8 col-md-offset-2">
 									<label for="message">Message<span class="red"> *</span></label>
 									<textarea type="text" id="message" name="message" class="form-control" placeholder="Votre message" rows="10" value=""></textarea>
 									<p class="comments"></p>
 								</div>
 								
-								<div class="col-md-12">
+								<div class="col-md-12 col-md-offset-2">
 									<p class="red form-required">* Ces information sont requises</p>
 								</div>
 								
-								<div class="col-md-12">
+								<div class="col-md-8 col-md-offset-2">
 									<input type="submit" class="form-send" value="Envoyer">
 								</div>
 							</div>
